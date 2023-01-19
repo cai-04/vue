@@ -223,7 +223,7 @@ css设置
         }
 ```
 
-![img](/041809322094614.png)
+![](https://github.com/cai-04/vue/blob/main/image/041809322094614.png)
 
 可以通过css的height和width属性控制元素的宽度和高度，padding相关的属性可以设置元素的内边距，可以使用padding-left、padding-right、padding-top和padding-bottom控制四个方向上的内边距。margin相关的属性用来控制元素的外边距，使用margin-left、margin-right、margin-top和margin-bottom控制四个方向上的外边距。
 
@@ -5900,11 +5900,11 @@ name默认的不用动，在components下写上你给组件起的名称即可
 
 然后，启动项目
 
-![image-20230119170111934](/image-20230119170111934.png)
+![](https://github.com/cai-04/vue/blob/main/image/image-20230119170111934.png)
 
 
 
-![image-20230119170145633](/image-20230119170145633.png)
+![](https://github.com/cai-04/vue/blob/main/image/image-20230119170145633.png)
 
 
 
@@ -5920,11 +5920,11 @@ name默认的不用动，在components下写上你给组件起的名称即可
 
 申请一个天气预报的API
 
-![image-20230118112343802](/image-20230118112343802.png)
+![](https://github.com/cai-04/vue/blob/main/image/image-20230118112343802.png)
 
 使用他提供的API[工具测试](https://www.juhe.cn/box/index/id/73)
 
-![image-20230118112611231](/image-20230118112611231.png)
+![](https://github.com/cai-04/vue/blob/main/image/image-20230118112611231.png)
 
 填写城市
 
@@ -7424,7 +7424,7 @@ export default{
 
 　动作是指会引起状态变化的行为，即上面代码methods选项中定义的方法，这些方法用来改变状态数据，状态数据的改动最终驱动视图的刷新
 　　上面3部分的协同工作就是Vue状态管理的核心。总体来看，在这个状态管理模式中，数据的向是单向的、私有的。由视图触发动作，由动作改变状态，由状态驱动视图。
-　![img](/u=197751472,274421958&fm=253&fmt=auto&app=138&f=JPG.jpeg)
+![](https://github.com/cai-04/vue/blob/main/image/u%3D197751472%2C274421958%26fm%3D253%26fmt%3Dauto%26app%3D138%26f%3DJPG.jpeg)
 　　单向数据流这种状态管理模式非常简洁，对于组件不多的简单Vue应用来说，这种模式非常高效，但是对于多组件复杂交互的场景，使用这种方式进行状态管理就会比较困难。我们来思考下面两种状况：
 
 　　<ul>(1)有多个组件依赖于同一个状态。</ul>
