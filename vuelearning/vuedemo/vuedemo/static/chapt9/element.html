@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElementUI</title>
+    <!-- 引入Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- 引入样式 --><!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <!-- 引入组件库 -->
+    <!-- <script src="https://unpkg.com/element-plus/lib/index.full.js"></script> -->
+     <!-- import JavaScript -->
+     <script src="https://unpkg.com/element-plus"></script>
+</head>
+<body>
+    <div id="Application" style="text-align: center;">
+        <div style="margin: 40px;">
+            <el-tag>这里是模板的内容: {{ count }}次点击</el-tag>
+        </div>
+        <div>
+            <el-button v-on:click="clickButton">按钮</el-button>
+        </div>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    count:0,
+                }
+            },
+            methods: {
+                clickButton() {
+                    this.count = this.count + 1
+                }
+            }
+        }
+        let instance = Vue.createApp(App)
+        instance.use(ElementPlus)
+        instance.mount("#Application") 
+    </script>
+</body>
+</html>

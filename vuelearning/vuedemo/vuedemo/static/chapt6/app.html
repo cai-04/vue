@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue组件生命周期</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="Application">
+        <sub-com>
+            {{content}}
+        </sub-com>
+    </div>
+    <script>
+        const App = Vue.createApp({})
+        App.config.errorHandler = (err, vm, info) => {
+            // 捕获运行中产生的异常
+            // err参数是错误对象 info为具体的错误信息
+        }
+        App.config.warnHandler = (msg, vm, trace) => {
+            // 捕获运行中产生的警告
+            // msg是警告信息 trace是组件的关系回溯
+        }
+        // 配置全局数据
+        App.config.globalProperties = {
+            version:"1.0.0"
+        }
+        const sub = {
+            directives: {
+                // 组件内部的自定义指令
+                getfocus:{
+                    mounted(el) {
+                        el.focus()
+                    }
+                }
+            },
+            mounted () {
+                // 在任意组件的任意地方都可以通过this直接访问全局数据
+                console.log(this.version)
+            }
+        }
+        App.component("sub-com", sub)
+        App.mount("#Application") 
+    </script>
+</body>
+</html>

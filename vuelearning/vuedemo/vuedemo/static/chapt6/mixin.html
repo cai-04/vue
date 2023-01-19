@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue组件Mixin</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="Application">
+        <my-com></my-com>
+        <my-com1 title="组件1"></my-com1>
+        <my-com2 title="组件2"></my-com2>
+        <my-com3 title="组件3"></my-com3>
+    </div>
+    <script>
+        const App = Vue.createApp({})
+        App.mixin({
+            props:["title"],
+            data() {
+                return {
+                    a:"a",
+                    b:"b",
+                    c:"c"
+                }
+            },
+            mounted () {
+                console.log("Mixin对象mounted")
+            }
+        })
+        const com = {
+            data(){
+                return {
+                    c:"C"
+                }
+            },
+            // 组件被创建后会调用，用来测试混入的数据情况
+            created() {
+                // a,b,c,d都存在
+                console.log(this.$data)
+            },
+            mounted () {
+                console.log("组件本身mounted")
+            }
+        }
+        const com1 = {
+            template:`
+                <div style="border:red solid 2px;">
+                    {{title}}
+                </div>
+            `
+        }
+        const com2 = {
+            template:`
+                <div style="border:blue solid 2px;">
+                    {{title}}
+                </div>
+            `
+        }
+        const com3 = {
+            template:`
+                <div style="border:green solid 2px;">
+                    {{title}}
+                </div>
+            `
+        }
+        App.component("my-com1", com1)
+        App.component("my-com2", com2)
+        App.component("my-com3", com3)
+        App.component("my-com", com)
+        App.mount("#Application") 
+    </script>
+</body>
+</html>

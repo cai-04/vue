@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue组件自定义指令</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="Application">
+        <input v-getfocus:custom="{a:1, b:2}" />
+    </div>
+    <script>
+        const App = Vue.createApp({})
+        App.directive('getfocus', {
+            // 当被绑定此指令的元素被挂在时调用
+            mounted (element, param) {
+                console.log(param.value)
+                // 将打印 参数:custom
+                console.log("参数:" + param.arg) 
+            }
+        })
+        App.mount("#Application") 
+    </script>
+</body>
+</html>

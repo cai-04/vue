@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应性变量</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        // 数据对象
+        let a = {
+            value:1
+        };
+        let b = {
+            value:2
+        };
+        // 定义触发器，用来刷新数据
+        let trigger = null;
+        // 数据变量的处理器，当数据发生变化时，调用触发器刷新
+        handleA = {
+          set(target, key, value) {
+            target[key] = value
+            if (trigger) {
+              trigger()
+            }
+            }
+        }
+        handleB = {
+            set(target, key, value) {
+                target[key] = value
+                if (trigger) {
+                    trigger()
+                }
+            }
+        }
+        // 进行对象的代理包装
+        let pa = new Proxy(a, handleA)
+        let pb = new Proxy(b, handleB)
+        let sum = 0;
+        // 实现触发器逻辑
+        trigger = () => {
+            sum = pa.value + pb.value;
+        };
+        trigger();
+        console.log(sum);
+        pa.value = 3;
+        pb.value = 4;
+        console.log(sum);
+    </script>
+</body>
+</html>

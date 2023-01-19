@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="Application"> 
+        <com name="组件名"></com>    
+    </div>
+    <script>   
+        const App = Vue.createApp({})
+        App.component("com",{
+            setup (props, context) {
+                let data = "setup的数据";
+                Vue.onMounted(()=>{
+                    console.log("setup定义的mounted")
+                })
+                return () => Vue.h('div', [data])
+            },
+            props: {
+                name: String,
+            },
+            mounted() {
+                console.log("组件内定义的mounted")
+            }
+            // template:`
+            //     <div>{{data}}</div>
+            // `
+        })
+        App.mount("#Application") 
+    </script>
+</body>
+</html>

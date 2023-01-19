@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchEffect</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="Application">     
+    </div>
+    <script>   
+        const App = Vue.createApp({
+            setup () {
+                let a = Vue.ref(1);
+                let stop = Vue.watchEffect(()=>{
+                    // 当变量a变化时，即会执行当前函数
+                    console.log("变量a变化了")
+                    console.log(a.value)
+                })
+                a.value = 2;
+                stop();
+                a.value = 3;
+                return {
+                    a
+                }
+            }
+        })
+        App.mount("#Application") 
+    </script>
+</body>
+</html>
