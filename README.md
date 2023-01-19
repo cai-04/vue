@@ -6,7 +6,7 @@ cai4 2023/1/19
 
 ## 名称说明
 
-1.[hello-world](https://github.com/cai-04/vue/tree/main/hello-world)：书籍10-12章代码
+1.[hello-world](https://github.com/cai-04/vue/tree/main/hello-world)：书籍10-12章代码,包括element plus的各个组件的使用，Vue路由，vue-axios的使用等，启动说明在笔记中进行了说明
 
 2.[shop-admin](https://github.com/cai-04/vue/tree/main/shop-admin)：书籍第十四章开发实例：电商后台管理系统
 
