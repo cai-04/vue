@@ -5817,9 +5817,9 @@ export default {
 
 场景：在components文件夹下写了几个vue小demo，怎么在项目运行起来看到效果呢？这里以我的为例，我在components文件夹下有两个vue demo一个是element plus的一些样式实现，另一个是基于vue axios的天气预报demo
 
-#### 12.2.1依赖，运行项目就不说了
+#### 11.2.1依赖，运行项目就不说了
 
-#### 12.2.2修改App.vue
+#### 11.2.2修改App.vue
 
 ```vue
 <template>
